@@ -3,9 +3,9 @@
 
 ## Script
 ```lua
-local reqenv = function() return (getgenv() or _G) end
-reqenv()["_NewPrefix"] = "'" -- change to the prefix you want
-loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/Toon-arch/iy-cmdline/main/source.lua")))();
+local env = function() return ((getgenv and getgenv()) or shared or _G) end
+env()._NewPrefix = "'" -- change to the prefix you want
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Toon-arch/iy-cmdline/main/source.lua"))()
 ```
 
 ### Images
